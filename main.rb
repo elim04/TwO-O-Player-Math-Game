@@ -24,6 +24,7 @@ puts "LET'S BEGIN THE GAME!"
 game = Game.new(player1, player2)
 
 while game.player1.alive? && game.player2.alive?
+  puts "----- NEW TURN  -----"
   puts "#{game.current_player.name} it is your turn!"
   
   question = Question.new
@@ -41,7 +42,6 @@ while game.player1.alive? && game.player2.alive?
   game.change_player
   game.life_status
   
-  puts "----- NEW TURN  -----"
 end
 
 puts "----- GAME OVER -----"
