@@ -25,28 +25,27 @@ game = Game.new(player1, player2)
 
 while game.player1.alive? && game.player2.alive?
   puts "#{game.current_player.name} it is your turn!"
-  puts "----- NEW TURN  -----"
-
+  
   question = Question.new
   question.read_question
   player_input = gets.chomp
-
+  
   if question.result(player_input)
-    puts "YES! You are correct"
+    puts "YES! You are correct."
   else
     puts "Seriously? No!"
     game.current_player.lose_life
   end
-
+  
   #switch player and report status, next turn
   game.change_player
-  puts ""
   game.life_status
-
+  
+  puts "----- NEW TURN  -----"
 end
 
 puts "----- GAME OVER -----"
-game.life_status
+# game.life_status
 game.winner?
 
 puts "#{game.winner.name} is the winner with a score of #{game.winner.lives}/3!!"
