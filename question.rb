@@ -1,12 +1,17 @@
 class Question
 
-  attr_accessor :answer, :question
-
   def initialize
     @number1 = rand(1..20)
     @number2 = rand(1..20)
-    @answer = self.number1 + self.number2
-    @question = "What does #{self.number1} + #{self.number2} equal?"
+    @answer = @number1 + @number2
+  end
+
+  def read_question 
+    puts "What does #{@number1} + #{@number2} equal?"
+  end
+
+  def result(answer)
+    @answer == answer.to_i
   end
 
 end
